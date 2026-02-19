@@ -1,0 +1,13 @@
+#usr/bin/env bash
+
+source /etc/os-release
+echo "OS version: $PRETTY_NAME"
+echo "-------------------------------------------"
+
+echo "BASH shell users:"
+grep "/bash$" /etc/passwd | cut -d: -f1
+echo "-------------------------------------------"
+
+echo "current open listening ports:"
+ss -tuln
+ 
